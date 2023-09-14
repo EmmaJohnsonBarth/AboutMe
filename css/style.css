@@ -1,0 +1,104 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color: #aac1c5;
+}
+
+body {
+    background-image: url(https://images.pexels.com/photos/580151/pexels-photo-580151.jpeg);
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #aac1c5;
+    text-align: center;
+}
+
+#navbar {
+    list-style-type: none;
+    margin: 15px;
+    font-size: 18px;
+    display: inline;
+}
+
+ul li {
+    margin: 15px;
+    background-color: #d5dad3;
+    color: #082334;
+}
+
+a:link {
+    color: rgb(100, 110, 161);
+}
+
+a:visited {
+    color: rgb(49, 51, 65);
+}
+
+a:hover {
+    color: rgb(58, 56, 168);
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(0, 26, 255);
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 24px;
+    padding-block: 10px;
+    background-color: #1e3212;
+    text-align: center;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: center;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    background-color: #233b42;
+    outline-color: #8623dd;
+    outline-width: 5px;
+}
+
+p {
+    font-size: 15px;
+    text-align: center;
+    background-color: rgb(44, 39, 34);
+    margin: 15px;
+    padding: 15px;
+}
+
+ol li {
+    color: #082334;
+    background-color: #d5dad3;
+    display: list-item;
+    text-align: center;
+    padding: 3px;
+}
+
+button {
+    color: #082334;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+/*id and class
+id has hashtag
+class needs a period
+id should be used only once*/
+
+/* #anotherStyle {
+    background-color: orange;
+    font-size: 53px;
+    color: azure;
+}
+
+.more-styles {
+    background-color: rgb(80, 0, 34);
+} */
