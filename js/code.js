@@ -1,5 +1,4 @@
-
-'use strict'
+'use strict';
 
 let userName = prompt('What is your name?', 'Bob');
 
@@ -9,14 +8,11 @@ document.write('Hello, ' + userName + '!');
 
 function questionOne() {
     let answer = prompt('Was I born in the state of Iowa? y/n');
-    if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
-        // console.log("Correct!")
-        alert("Correct!");
+    if (answer.toLowerCase() === 'n') {
+        alert('Correct!');
         questionTwo();
     } else {
-        // console.log("Try again!")
-        alert('Incorrect! I actually was born in Kentucky!')
-        questionTwo();
+        alert('Try again!');
     }
 }
 
@@ -59,76 +55,63 @@ function questionFour() {
     }
 }
 
-let answer6;
-
 function questionFive() {
-    let answer = prompt('Did I attend Cornell College? y/n');
-    if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-        // console.log("Good job!)
+    let answer6 = prompt('Did I attend Cornell College? y/n');
+    if (answer6.toLowerCase() === 'y') {
         alert('Correct!');
-        let answer6 = prompt('How many pets do I own?');
-        answer6 = parseInt(answer6);
-        // questionSix();
-        lastTwo();
+        let attemptsQ6 = 0;
+
+        while (attemptsQ6 < 6) {
+            let petCount = parseInt(prompt('How many pets do I own?'));
+
+            if (petCount === 3) {
+                alert('Correct!');
+                questionSix();
+                break;
+            } else if (petCount < 3) {
+                alert('Too low!');
+            } else if (petCount > 3) {
+                alert('Too high!');
+            } else {
+                alert('Please enter a valid number.');
+            }
+
+            attemptsQ6++;
+        }
+
+        if (attemptsQ6 >= 6) {
+            alert('Too many attempts! The correct answer is 3 pets.');
+            questionSix();
+        }
     } else {
-        // console.log("Try again!")
-        alert('Incorrect! I did attend Cornell College!');
-        let answer6 = prompt('How many pets do I own?');
-        answer6 = parseInt(answer6);
-        return answer6;
-        lastTwo();
+        alert('Try again!');
     }
 }
 
-let answer7;
+function questionSix() {
+    let petNames = ['Alvin', 'Daisy', 'Josie'];
+    let attemptsQ7 = 0;
 
-function lastTwo() {
-    let attemptsQ6 = 0;
-    while (attemptsQ6 <= 6) {
-        if (answer6 === 3) {
+    while (attemptsQ7 < 6) {
+        let answer7 = prompt('What is the name of one of my pets? Hint: One is a flower, one is a cartoon chipmunk, and one is a cartoon singer!').toLowerCase();
+
+        if (petNames) {
             alert('Correct!');
-            let answer7 = prompt('What is the name of one of my pets? Hint: One is a flower, one is a cartoon chipmunk, and one is a cartoon singer!');
             break;
-        } else if (answer6 > 3) {
-            alert('Too high!');
-            attemptsQ6++;
-            answer6 = prompt('How many pets do I own?');
-        } else if (answer6 < 3) {
-            attemptsQ6++
-            alert('Too low!');
-            answer6 = prompt('How many pets do I own?');
         } else {
-            alert('what')
-        };
-    };
-
-    let arrOfAnswers = ['alvin', 'daisy', 'josie'];
-    let answer7LC = answer7.toLowerCase();
-
-    for (let attemptsQ7 = 0; attemptsQ7 <= 6; attemptsQ7++) {
-
-        if (attemptsQ7 > 6) {
-            alert('Too many attempts! The answers were Daisy, Alvin, and Josie.');
-            attemptsQ7 = 0;
-            break;
+            alert('Incorrect! Try again.');
         }
 
-        if (answer7LC === 'alvin' || answer7LC === 'daisy' || answer7LC === 'josie') {
-            alert('Correct!');
-        } else if (answer7 > 3) {
-            alert('Too high!');
-            attemptsQ7++;
-            answer7 = prompt('How many pets do I own?');
-        } else if (answer7 < 3) {
-            attemptsQ7++
-            alert('Too low!');
-            answer7 = prompt('How many pets do I own?');
-        } else {
-            alert('what')
-        };
-    };
+        attemptsQ7++;
+    }
 
-};
+    if (attemptsQ7 >= 6) {
+        alert('Too many attempts! The correct answers are: Alvin, Daisy, and Josie.');
+    }
+}
+
+questionOne();
+
 
 // let attemptsQ6 = 0;
 // function questionSix() {
