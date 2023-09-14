@@ -82,17 +82,11 @@ function questionSix() {
         } else if (petCount < 3) {
             attemptsQ6++;
             alert('Too low!');
-            // petCount = prompt('How many pets do I own?');
-            // parseInt(petCount());
         } else if (petCount > 3) {
             attemptsQ6++;
             alert('Too high!');
-            // petCount = prompt('How many pets do I own?');
-            // parseInt(petCount());
         } else {
             alert('Please enter a valid number.');
-            // petCount = prompt('How many pets do I own?');
-            // parseInt(petCount());
         }
     }
 
