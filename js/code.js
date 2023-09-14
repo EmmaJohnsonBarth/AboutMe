@@ -6,19 +6,24 @@ alert('Welcome to the site, ' + userName);
 
 document.write('Hello, ' + userName + '!');
 
+let points = 0;
+
 function questionOne() {
     let answer = prompt('Was I born in the state of Iowa? y/n');
     if (answer.toLowerCase() === 'n') {
+        points++
         alert('Correct!');
         questionTwo();
     } else {
-        alert('Try again!');
+        alert('Incorrect! I was born in Kentucky!');
+        questionTwo();
     }
 }
 
 function questionTwo() {
     let answer = prompt('Do I play the piano? y/n');
     if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+        points++
         // console.log("Correct!")
         alert("Correct!");
         questionThree();
@@ -32,6 +37,7 @@ function questionTwo() {
 function questionThree() {
     let answer = prompt('Do I own pets? y/n');
     if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+        points++;
         // console.log("Correct!")
         alert("Correct!");
         questionFour();
@@ -45,6 +51,7 @@ function questionThree() {
 function questionFour() {
     let answer = prompt('Did I work for Iowa State University? y/n');
     if (answer.toLowerCase() === 'n' || answer.toLowerCase === 'no') {
+        points++
         // console.log("Correct!")
         alert('Correct!');
         questionFive();
@@ -57,35 +64,45 @@ function questionFour() {
 
 function questionFive() {
     let answer6 = prompt('Did I attend Cornell College? y/n');
-    if (answer6.toLowerCase() === 'y') {
+    if (answer6.toLowerCase() === 'y' || answer6.toLowerCase() === 'yes') {
+        points++;
         alert('Correct!');
-        let attemptsQ6 = 0;
-
-        while (attemptsQ6 < 6) {
-            let petCount = parseInt(prompt('How many pets do I own?'));
-
-            if (petCount === 3) {
-                alert('Correct!');
-                questionSix();
-                break;
-            } else if (petCount < 3) {
-                alert('Too low!');
-            } else if (petCount > 3) {
-                alert('Too high!');
-            } else {
-                alert('Please enter a valid number.');
-            }
-
-            attemptsQ6++;
-        }
-
-        if (attemptsQ6 >= 6) {
-            alert('Too many attempts! The correct answer is 3 pets.');
-            questionSix();
-        }
+        questionSix();
     } else {
-        alert('Try again!');
+        alert('Incorrect! I did attend Cornell College.');
+        questionSix();
     }
+};
+
+function questionSix() {
+    let attemptsQ6 = 0;
+
+    while (attemptsQ6 < 6) {
+        let petCount = parseInt(prompt('How many pets do I own?'));
+
+        if (petCount === 3) {
+            points++
+            alert('Correct!');
+            questionSix();
+            break;
+        } else if (petCount < 3) {
+            alert('Too low!');
+        } else if (petCount > 3) {
+            alert('Too high!');
+        } else {
+            alert('Please enter a valid number.');
+        }
+
+        attemptsQ6++;
+    }
+
+    if (attemptsQ6 >= 6) {
+        alert('Too many attempts! The correct answer is 3 pets.');
+        questionSix();
+    }
+} else {
+    alert('Try again!');
+}
 }
 
 function questionSix() {
@@ -96,7 +113,8 @@ function questionSix() {
         let answer7 = prompt('What is the name of one of my pets? Hint: One is a flower, one is a cartoon chipmunk, and one is a cartoon singer!').toLowerCase();
 
         if (petNames) {
-            alert('Correct!');
+            points++;
+            alert('Correct! You scored ' + points + ' out of 7 possible points!');
             break;
         } else {
             alert('Incorrect! Try again.');
@@ -110,7 +128,6 @@ function questionSix() {
     }
 }
 
-questionOne();
 
 
 // let attemptsQ6 = 0;
