@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(https://images.pexels.com/photos/580151/pexels-photo-580151.jpeg);
+    background-image: url("https://images.pexels.com/photos/580151/pexels-photo-580151.jpeg");
     width: 1200px;
     margin: 0 auto;
 }
@@ -14,7 +14,7 @@ header {
     text-align: center;
 }
 
-#navbar {
+.navbar {
     list-style-type: none;
     margin: 15px;
     font-size: 18px;

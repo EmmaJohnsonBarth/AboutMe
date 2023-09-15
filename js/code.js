@@ -4,7 +4,7 @@ let userName = prompt('What is your name?', 'Bob');
 
 alert('Welcome to the site, ' + userName);
 
-document.write('Hello, ' + userName + '!');
+document.write('<h1 style="font-size:50px; top: 0"> Hello, ' + userName + '! </h1>');
 
 let points = 0;
 
